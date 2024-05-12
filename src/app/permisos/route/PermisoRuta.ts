@@ -14,7 +14,6 @@ class PermisoRuta {
     // Configurar CORS para todas las rutas
     const corsOptions = {
       origin: true,
-      optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
     };

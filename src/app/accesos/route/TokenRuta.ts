@@ -10,10 +10,8 @@ class TokenRuta {
   }
 
   public lasRutas(): void {
-    // Configurar CORS para la ruta "/gettoken"
     const corsOptions = {
       origin: true,
-      optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
     };
