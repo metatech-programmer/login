@@ -33,8 +33,7 @@ class Servidor {
     this.app.use(bodyParser.json({ limit: "5mb" }));
     this.app.use(bodyParser.urlencoded({ extended: true }));
   }
-
-  public cargarRutas(): void {
+         public cargarRutas(): void {
     this.app.use("/api/access", seguridad.revisar, accesoRutaApi);
     this.app.use("/api/permission", seguridad.revisar, permisoRutaApi);
     this.app.use("/api/role", seguridad.revisar, rolRutaApi);
