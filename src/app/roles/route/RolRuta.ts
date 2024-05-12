@@ -1,20 +1,30 @@
 import { Router } from "express";
 import rolControlador from "../controller/RolControlador";
+import cors from 'cors';
 
-class RolRuta{
-    public rolRutaApi:Router;
+class RolRuta {
+  public rolRutaApi: Router;
 
-    constructor(){
-        this.rolRutaApi=Router();
-        this.lasRutas();
-    }
+  constructor() {
+    this.rolRutaApi = Router();
+    this.lasRutas();
+  }
 
-    public lasRutas():void{
-        this.rolRutaApi.get("/getrole",rolControlador.cargarRoles);
-        this.rolRutaApi.post("/createrole",rolControlador.crearRoles);
-        this.rolRutaApi.delete("/deleterole",rolControlador.eliminarRoles);
-        this.rolRutaApi.put("/updaterole",rolControlador.actualizarRoles);
-    }
+  public lasRutas(): void {
+    // Configurar CORS para todas las rutas
+    const corsOptions = {
+      origin: 'https://alcadia.vercel.app',
+      optionsSuccessStatus: 200,
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      credentials: true
+    };
+
+    this.rolRutaApi.get("/getrole", cors(corsOptions), rolControlador.cargarRoles);
+    this.rolRutaApi.post("/createrole", cors(corsOptions), rolControlador.crearRoles);
+    this.rolRutaApi.delete("/deleterole", cors(corsOptions), rolControlador.eliminarRoles);
+    this.rolRutaApi.put("/updaterole", cors(corsOptions), rolControlador.actualizarRoles);
+  }
 }
+
 const rolRuta = new RolRuta();
 export default rolRuta.rolRutaApi;
