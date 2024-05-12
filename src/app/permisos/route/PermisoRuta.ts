@@ -1,6 +1,6 @@
 import { Router } from "express";
 import permisoControlador from "../controller/PermisoControlador";
-import cors from 'cors';
+import cors from "cors";
 
 class PermisoRuta {
   public permisoRutaApi: Router;
@@ -13,16 +13,32 @@ class PermisoRuta {
   public lasRutas(): void {
     // Configurar CORS para todas las rutas
     const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
+      origin: true,
       optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true
+      credentials: true,
     };
 
-    this.permisoRutaApi.get("/getpermission", cors(corsOptions), permisoControlador.cargarPermiso);
-    this.permisoRutaApi.post("/createpermission", cors(corsOptions), permisoControlador.crearPermiso);
-    this.permisoRutaApi.delete("/deletepermission", cors(corsOptions), permisoControlador.eliminarPermiso);
-    this.permisoRutaApi.put("/updatepermission", cors(corsOptions), permisoControlador.actualizarPermiso);
+    this.permisoRutaApi.get(
+      "/getpermission",
+      cors(corsOptions),
+      permisoControlador.cargarPermiso
+    );
+    this.permisoRutaApi.post(
+      "/createpermission",
+      cors(corsOptions),
+      permisoControlador.crearPermiso
+    );
+    this.permisoRutaApi.delete(
+      "/deletepermission",
+      cors(corsOptions),
+      permisoControlador.eliminarPermiso
+    );
+    this.permisoRutaApi.put(
+      "/updatepermission",
+      cors(corsOptions),
+      permisoControlador.actualizarPermiso
+    );
   }
 }
 

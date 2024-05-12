@@ -1,6 +1,6 @@
 import { Router } from "express";
 import tokenControlador from "../controller/TokenControlador";
-import cors from 'cors';
+import cors from "cors";
 
 class TokenRuta {
   public tokenRutaApi: Router;
@@ -12,13 +12,17 @@ class TokenRuta {
   public lasRutas(): void {
     // Configurar CORS para la ruta "/gettoken"
     const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
+      origin: true,
       optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true
+      credentials: true,
     };
 
-    this.tokenRutaApi.post("/gettoken", cors(corsOptions), tokenControlador.crearToken);
+    this.tokenRutaApi.post(
+      "/gettoken",
+      cors(corsOptions),
+      tokenControlador.crearToken
+    );
   }
 }
 

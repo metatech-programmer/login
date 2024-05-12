@@ -1,6 +1,6 @@
 import { Router } from "express";
 import usuarioControlador from "../controller/UsuarioControlador";
-import cors from 'cors';
+import cors from "cors";
 
 class UsuarioRuta {
   public usuarioRutaApi: Router;
@@ -11,17 +11,37 @@ class UsuarioRuta {
 
   public lasRutas(): void {
     const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
+      origin: true,
       optionsSuccessStatus: 200,
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true
+      credentials: true,
     };
 
-    this.usuarioRutaApi.get("/getuser", cors(corsOptions), usuarioControlador.cargarUsuario);
-    this.usuarioRutaApi.post("/createuser", cors(corsOptions), usuarioControlador.crearUsuario);
-    this.usuarioRutaApi.post("/createuserwithaccess", cors(corsOptions), usuarioControlador.crearUsuarioAcceso);
-    this.usuarioRutaApi.delete("/deleteuser", cors(corsOptions), usuarioControlador.eliminarUsuario);
-    this.usuarioRutaApi.put("/updateuser", cors(corsOptions), usuarioControlador.actualizarUsuario);
+    this.usuarioRutaApi.get(
+      "/getuser",
+      cors(corsOptions),
+      usuarioControlador.cargarUsuario
+    );
+    this.usuarioRutaApi.post(
+      "/createuser",
+      cors(corsOptions),
+      usuarioControlador.crearUsuario
+    );
+    this.usuarioRutaApi.post(
+      "/createuserwithaccess",
+      cors(corsOptions),
+      usuarioControlador.crearUsuarioAcceso
+    );
+    this.usuarioRutaApi.delete(
+      "/deleteuser",
+      cors(corsOptions),
+      usuarioControlador.eliminarUsuario
+    );
+    this.usuarioRutaApi.put(
+      "/updateuser",
+      cors(corsOptions),
+      usuarioControlador.actualizarUsuario
+    );
   }
 }
 
