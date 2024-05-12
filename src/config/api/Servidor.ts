@@ -10,13 +10,6 @@ import bodyParser = require("body-parser");
 const cors = require("cors");
 process.loadEnvFile();
 
-const corsOptions = {
-  origin: true,
-  optionsSuccessStatus: 200,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-};
-
 class Servidor {
   public app: express.Application;
 
@@ -27,6 +20,12 @@ class Servidor {
   }
 
   public cargarConfiguracion(): void {
+    const corsOptions = {
+      origin: true,
+      optionsSuccessStatus: 200,
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      credentials: true,
+    };
     this.app.use(cors(corsOptions));
     this.app.set("PORT", process.env.PORT || 3000);
     this.app.use(morgan("dev"));
