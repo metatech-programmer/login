@@ -57,7 +57,7 @@ useCallback(
 
   return (
     <div className="flex">
-      <div className="hidden md:flex bg-[url(tunja.png)] items-center justify-center w-1/2 h-screen bg-no-repeat bg-cover"/>
+      <div className="hidden md:flex bg-[url(https://alcadia.vercel.app/tunja.png)] items-center justify-center w-1/2 h-screen bg-no-repeat bg-cover"/>
       <div className="flex-1 h-screen overflow-y-scroll">
         <div className="mx-auto w-4/5 flex flex-col justify-center h-full">
           <div className="self-center pt-20">

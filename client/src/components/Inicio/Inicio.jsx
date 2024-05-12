@@ -12,7 +12,7 @@ const Inicio = () => {
   };
 
   return (
-    <div className="bg-[url(tunja.png)] bg-no-repeat bg-cover min-h-screen flex items-center justify-center">
+    <div className="bg-[url(https://alcadia.vercel.app/tunja.png)] bg-no-repeat bg-cover min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-4xl font-bold text-center mb-4">
           ¡Bienvenid@ {user} nuestra aplicación!
