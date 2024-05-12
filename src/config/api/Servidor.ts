@@ -15,11 +15,17 @@ class Servidor {
 
   constructor() {
     this.app = express();
+
     this.cargarConfiguracion();
     this.cargarRutas();
-  }
+  } // Configurar CORS
 
   public cargarConfiguracion(): void {
+    const corsOptions = {
+      origin: true,
+      credentials: true,
+    };
+    this.app.use(cors(corsOptions));
     this.app.set("PORT", process.env.PORT || 3000);
     this.app.use(cors());
     this.app.use(morgan("dev"));
@@ -28,7 +34,7 @@ class Servidor {
   }
 
   public cargarRutas(): void {
-    this.app.use("/api/access", seguridad.revisar, accesoRutaApi );
+    this.app.use("/api/access", seguridad.revisar, accesoRutaApi);
     this.app.use("/api/permission", seguridad.revisar, permisoRutaApi);
     this.app.use("/api/role", seguridad.revisar, rolRutaApi);
     this.app.use("/api/user", seguridad.revisar, usuarioRutaApi);
