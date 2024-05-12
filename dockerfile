@@ -1,23 +1,15 @@
-# Utiliza una imagen base de Node.js 20 con Alpine Linux
-FROM node:20-alpine
+bashCopy code
+# Use the official Node.js image as the base image
+FROM node:18
 
-# Establece el directorio de trabajo
+# Set the working directory in the container
 WORKDIR /app
 
-# Copia el archivo package.json y package-lock.json
-COPY package*.json ./
+# Copy the application files into the working directory
+COPY . /app
 
-# Instala las dependencias
-RUN npm ci
+# Install the application dependencies
+RUN npm install
 
-# Copia el código fuente
-COPY . .
-
-# Compila el código TypeScript (si corresponde)
-RUN npm run build
-
-# Expone el puerto en el que se ejecutará el backend
-EXPOSE 3000
-
-# Comando para iniciar el backend
+# Define the entry point for the container
 CMD ["npm", "start"]
