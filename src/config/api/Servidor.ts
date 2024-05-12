@@ -21,13 +21,7 @@ class Servidor {
   } // Configurar CORS
 
   public cargarConfiguracion(): void {
-    const corsOptions = {
-      origin: true,
-      optionsSuccessStatus: 200,
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true,
-    };
-    this.app.use(cors(corsOptions));
+    this.app.use(cors());
     this.app.set("PORT", process.env.PORT || 3000);
     this.app.use(morgan("dev"));
     this.app.use(bodyParser.json({ limit: "5mb" }));
