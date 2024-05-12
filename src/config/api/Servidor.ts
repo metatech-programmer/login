@@ -22,7 +22,7 @@ class Servidor {
 
   public cargarConfiguracion(): void {
     const corsOptions = {
-      origin: true,
+      origin:  'https://alcadia.vercel.app', 
       credentials: true,
     };
     this.app.use(cors(corsOptions));
