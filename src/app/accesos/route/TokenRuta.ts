@@ -10,16 +10,10 @@ class TokenRuta {
   }
 
   public lasRutas(): void {
-    const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true,
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    };
     
     this.tokenRutaApi.post(
       "/gettoken",
-      cors(corsOptions),
+      cors(),
       tokenControlador.crearToken
     );
   }
