@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/api/token/gettoken",
-      "dest": "./config/app/accesos/route/"
+      "dest": "./config/app/accesos/dao/TokenDao.js"
     }
   ]
 }
