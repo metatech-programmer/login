@@ -9,11 +9,7 @@
   "routes": [
     {
       "src": "/api/token/gettoken",
-      "dest": "./config/api/Servidor.js"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "./config/api/Servidor.js"
+      "dest": "./config/app/accesos/route/TokenRuta.js"
     }
   ]
 }
