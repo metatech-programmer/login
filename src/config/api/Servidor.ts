@@ -27,6 +27,10 @@ class Servidor {
       origin: 'https://alcadia.vercel.app',
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
     }));
+    this.app.use((req, res, next) => {
+      res.setHeader('Access-Control-Allow-Origin', 'https://alcadia.vercel.app');
+      next();
+    });
     this.app.set("PORT", process.env.PORT || 3000);
     this.app.use(morgan("dev"));
     this.app.use(bodyParser.json({ limit: "5mb" }));
