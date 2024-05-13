@@ -1,7 +1,7 @@
 
 const NotFound = () => {
   return (
-    <div className="bg-[url(https://alcadia.vercel.app/tunja.png)] bg-no-repeat bg-cover h-screen flex justify-center items-center">
+    <div className="bg-[url(https://alcaldia-beige.vercel.app/tunja.png)] bg-no-repeat bg-cover h-screen flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-4xl font-bold text-center mb-4">404 - Página no encontrada</h1>
         <p className="text-gray-600 mb-8">
