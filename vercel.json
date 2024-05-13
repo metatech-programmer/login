@@ -2,7 +2,7 @@
 {
     "builds":[
         {
-            "src": "./src/index.ts",
+            "src": "./index.js",
             "use": "@vercel/node"
         }
     ],
