@@ -4,7 +4,8 @@ import Jwt from "jsonwebtoken";
 import pool from "../../../config/conexion/ConexionBase";
 import { log } from "console";
 import bcrypt from "bcrypt";
-process.loadEnvFile();
+import dotenv from 'dotenv';
+dotenv.config();
 
 class TokenDao {
   protected static async generar(res: Response, params: any[]): Promise<any> {

@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
-process.loadEnvFile();
+import dotenv from 'dotenv';
+dotenv.config();
 
 class Seguridad {
   public revisar(req: Request, res: Response, next: NextFunction) {

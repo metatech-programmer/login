@@ -8,7 +8,8 @@ import tokenRutaApi from "../../app/accesos/route/TokenRuta";
 import seguridad from "../../middleware/Seguridad";
 import bodyParser = require("body-parser");
 const cors = require("cors");
-process.loadEnvFile();
+import dotenv from 'dotenv';
+dotenv.config();
 
 class Servidor {
   public app: express.Application;

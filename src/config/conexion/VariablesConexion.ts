@@ -1,4 +1,5 @@
-process.loadEnvFile();
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default {
   user: process.env.POSTGRES_USER || "user_login",	
