@@ -22,7 +22,7 @@ class Servidor {
   public cargarConfiguracion(): void {
     this.app.use(
       cors({
-        origin: "https://alcaldia-beige.vercel.app/",
+        origin: "https://alcaldia-beige.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
       })
