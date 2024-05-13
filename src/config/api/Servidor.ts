@@ -22,7 +22,7 @@ class Servidor {
   public cargarConfiguracion(): void {
     this.app.use(
       cors({
-        origin: "https://alcadia.vercel.app",
+        origin: "https://alcadia.vercel.app/login",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"],
       })
