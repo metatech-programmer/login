@@ -13,7 +13,6 @@ class TokenRuta {
     
     this.tokenRutaApi.post(
       "/gettoken",
-      cors(),
       tokenControlador.crearToken
     );
   }

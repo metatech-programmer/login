@@ -11,17 +11,11 @@ class RolRuta {
   }
 
   public lasRutas(): void {
-    const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true,
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    };
 
-    this.rolRutaApi.get("/getrole", cors(corsOptions), rolControlador.cargarRoles);
-    this.rolRutaApi.post("/createrole", cors(corsOptions), rolControlador.crearRoles);
-    this.rolRutaApi.delete("/deleterole", cors(corsOptions), rolControlador.eliminarRoles);
-    this.rolRutaApi.put("/updaterole", cors(corsOptions), rolControlador.actualizarRoles);
+    this.rolRutaApi.get("/getrole", rolControlador.cargarRoles);
+    this.rolRutaApi.post("/createrole", rolControlador.crearRoles);
+    this.rolRutaApi.delete("/deleterole", rolControlador.eliminarRoles);
+    this.rolRutaApi.put("/updaterole", rolControlador.actualizarRoles);
   }
 }
 

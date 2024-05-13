@@ -11,31 +11,21 @@ class PermisoRuta {
   }
 
   public lasRutas(): void {
-    const corsOptions = {
-      origin: 'https://alcadia.vercel.app',
-      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true,
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    };
-
+    
     this.permisoRutaApi.get(
       "/getpermission",
-      cors(corsOptions),
       permisoControlador.cargarPermiso
     );
     this.permisoRutaApi.post(
       "/createpermission",
-      cors(corsOptions),
       permisoControlador.crearPermiso
     );
     this.permisoRutaApi.delete(
       "/deletepermission",
-      cors(corsOptions),
       permisoControlador.eliminarPermiso
     );
     this.permisoRutaApi.put(
       "/updatepermission",
-      cors(corsOptions),
       permisoControlador.actualizarPermiso
     );
   }
