@@ -11,11 +11,11 @@ class RolRuta {
   }
 
   public lasRutas(): void {
-    // Configurar CORS para todas las rutas
     const corsOptions = {
-      origin:  true,
+      origin: 'https://alcadia.vercel.app',
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-      credentials: true
+      credentials: true,
+      allowedHeaders: ['Content-Type', 'Authorization'],
     };
 
     this.rolRutaApi.get("/getrole", cors(corsOptions), rolControlador.cargarRoles);

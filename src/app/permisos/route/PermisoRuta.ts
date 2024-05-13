@@ -11,11 +11,11 @@ class PermisoRuta {
   }
 
   public lasRutas(): void {
-    // Configurar CORS para todas las rutas
     const corsOptions = {
-      origin: true,
+      origin: 'https://alcadia.vercel.app',
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
+      allowedHeaders: ['Content-Type', 'Authorization'],
     };
 
     this.permisoRutaApi.get(

@@ -21,9 +21,10 @@ class Servidor {
 
   public cargarConfiguracion(): void {
     const corsOptions = {
-      origin: true,
+      origin: 'https://alcadia.vercel.app',
       methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
       credentials: true,
+      allowedHeaders: ['Content-Type', 'Authorization'],
     };
     this.app.use(cors(corsOptions));
     this.app.set("PORT", process.env.PORT || 3000);
