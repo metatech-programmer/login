@@ -1,15 +1,15 @@
+
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "./index.js",
-      "use": "@vercel/node"
-    }
+  "builds":[
+      {
+          "src": "./index.js",
+          "use": "@vercel/node"
+      }
   ],
   "routes": [
-    {
-      "src": "/api/token/gettoken",
-      "dest": "./config/app/accesos/dao/TokenDao.js"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "/"
+      }
   ]
 }
