@@ -11,8 +11,5 @@
           "src": "/(.*)",
           "dest": "/config/api/Servidor.js"
       }
-  ],
-  "headers": {
-    "Access-Control-Allow-Origin": "*"
-  }
+  ]
 }
