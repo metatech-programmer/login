@@ -1,6 +1,6 @@
 import Servidor from "../src/config/api/Servidor";
 
-const miServidor = new Servidor();
-miServidor.cargarServidor();
-
-export default miServidor;
+const servidor = new Servidor();
+console.clear();
+servidor.cargarServidor();
+export default servidor;
