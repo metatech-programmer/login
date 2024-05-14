@@ -26,7 +26,7 @@ useCallback(
     e.preventDefault();
 
     try {
-      const response = await fetch("https://login-dun-five.vercel.app/api/token/gettoken", {
+      const response = await fetch("https://login-psi-six.vercel.app/api/token/gettoken", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
