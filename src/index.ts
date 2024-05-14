@@ -4,4 +4,4 @@ const servidor  = new Servidor();
 console.clear()
 servidor.cargarServidor();
 
-export default servidor;
+export default servidor.app;
