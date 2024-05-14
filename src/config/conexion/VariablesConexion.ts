@@ -8,6 +8,6 @@ export default {
   database: process.env.POSTGRES_DATABASE || "db_login",
   port: parseInt(process.env.DB_PORT || "5432"),
   ssl: {
-    rejectUnauthorized: false
+    rejectUnauthorized: true
   }
 };
