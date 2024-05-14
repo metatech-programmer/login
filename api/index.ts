@@ -1,2 +1,5 @@
-import servidor from "../src/config/api/Servidor";
-export default servidor;
+import Servidor from "../src/config/api/Servidor";
+
+const miServidor = new Servidor();
+
+export default miServidor;
