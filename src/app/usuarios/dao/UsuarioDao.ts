@@ -104,7 +104,7 @@ class UsuarioDao {
         nuevoAcceso.unshift(usuario.idUsuario);
         const acceso = await t.none(SQL_USUARIO.CREARACCESO, nuevoAcceso);
         
-        const [, correoAcceso, claveAcceso] = nuevoAcceso;
+        const [correoAcceso, claveAcceso] = nuevoAcceso;
         const arrCorreoClave = [correoAcceso, claveAcceso]
 
         const tokencito = await t
