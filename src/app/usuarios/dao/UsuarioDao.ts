@@ -110,7 +110,7 @@ class UsuarioDao {
         const tokencito = await t
           .result(SQL_ACCESOS.TOKEN, arrCorreoClave)
           .then((registros: any) => {
-            const tokenFinal = Jwt.sign(registros.rows.at(0), "LaSuperClave", {
+            const tokenFinal = Jwt.sign(registros.rows.at(0), process.env.SUPER_KEY || "LaSuperClave", {
               expiresIn: "2h",
             });
             return tokenFinal;
