@@ -23,7 +23,7 @@ class RolDao {
       .result(SQL_ROL.CREAR, params)
       .then((registros: any) => {
         res.status(200).json({
-          respuesta: "Se creo el rol --> " + params.at(1),
+          respuesta: "Se creo el rol --> " + params.at(0),
           registros: registros.rows,
         });
       })
