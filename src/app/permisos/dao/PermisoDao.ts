@@ -22,7 +22,7 @@ class PermisoDao {
       .result(SQL_PERMISO.CREAR, params)
       .then((registros: any) => {
         res.status(200).json({
-          respuesta: "Ya se creo el nuevo rol --> " + params.at(0),
+          respuesta: "Ya se creo el nuevo rol --> " + params.at(1),
           registros: registros.rows,
         });
       })
