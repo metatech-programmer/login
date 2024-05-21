@@ -100,7 +100,7 @@ class UsuarioDao {
   ): Promise<any> {
     pool
       .task(async (t) => {
-        const usuario = await t.one(SQL_USUARIO.CREAR, nuevoUsu);
+       const usuario = await t.one(SQL_USUARIO.CREAR, nuevoUsu);
         nuevoAcceso.unshift(usuario.idUsuario);
         const acceso = await t.none(SQL_USUARIO.CREARACCESO, nuevoAcceso);
         
@@ -110,7 +110,7 @@ class UsuarioDao {
         const tokencito = await t
           .result(SQL_ACCESOS.TOKEN, arrCorreoClave)
           .then((registros: any) => {
-            const tokenFinal = Jwt.sign(registros.rows.at(0), process.env.SUPER_KEY || "LaSuperClaving", {
+            const tokenFinal = Jwt.sign(registros.rows.at(0), process.env.SUPER_KEY || "LaSuperClave", {
               expiresIn: "2h",
             });
             return tokenFinal;
